@@ -1,0 +1,9 @@
+*.gem
+*~
+.*.swp
+/.bundle
+/.vagrant
+/files/**/cache/
+/pkg
+/vendor/bundle
+/vendor/cookbooks
