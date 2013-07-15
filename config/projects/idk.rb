@@ -7,15 +7,13 @@ install_path    "/opt/idk"
 build_version   Omnibus::BuildVersion.new.semver
 build_iteration 1
 
-# creates required build directories
 dependency "preparation"
 
 dependency "chef-gem"
+dependency "berkshelf"
+dependency "idk-bundle"
+dependency "idk-scripts"
 
-# idk dependencies/components
-# dependency "somedep"
-
-# version manifest file
 dependency "version-manifest"
 
 exclude "\.git*"

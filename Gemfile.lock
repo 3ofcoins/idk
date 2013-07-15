@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/3ofcoins/opscode-omnibus-ruby/
-  revision: bf35ade3f296ec21abbff21744c86a393c9f2def
+  revision: 27947183203b8bcceb916cc84b101bc3026870b6
   branch: master
   specs:
-    omnibus (1.1.1)
+    omnibus (1.2.0)
       fpm (~> 0.4.33)
       mixlib-config (~> 1.1.2)
       mixlib-shellout (~> 1.0)
@@ -12,10 +12,8 @@ GIT
       thor (>= 0.16.0)
       uber-s3
 
-GIT
-  remote: https://github.com/3ofcoins/opscode-omnibus-software.git
-  revision: bad5ef9a384fc3b28dd282449971b5683d4b8309
-  branch: master
+PATH
+  remote: /Users/japhy/Projekty/Forks/opscode/omnibus-software
   specs:
     omnibus-software (0.0.1)
 
@@ -31,7 +29,7 @@ GEM
       ffi (~> 1.0, >= 1.0.11)
     clamp (0.6.1)
     ffi (1.9.0)
-    fpm (0.4.39)
+    fpm (0.4.40)
       arr-pm (~> 0.0.8)
       backports (>= 2.6.2)
       cabin (>= 0.6.0)
@@ -71,5 +69,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  omnibus (~> 1.1.0)!
+  omnibus (~> 1.2.0)!
   omnibus-software!

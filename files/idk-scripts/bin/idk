@@ -1,0 +1,27 @@
+#!/bin/sh
+set -e
+
+#
+# Sanitize the environment
+# ------------------------
+#
+# Remove from environment any Bundler's, RVM's, and other
+# Ruby-mangling values that may confuse our commands.
+
+rubyvars_re='^\(rvm_.*\|RUBY_.*\|GEM_.*\|BUNDLE_.*\|MY_RUBY_HOME\|RUBYOPT\|IRBRC\)$'
+for var in `env | cut -d= -f1 | grep "$rubyvars_re"` ; do
+    unset $var
+done
+
+# 
+# Execute actual Thor command
+# ---------------------------
+
+if [ "x$HACKING_IDK_RB" = "x" ] ; then
+    idk_rb=/opt/idk/embedded/bin/idk.rb
+else
+    idk_rb="$HACKING_IDK_RB/files/idk-scripts/embedded/bin/idk.rb"
+fi
+
+export IDK0="$0"
+exec /opt/idk/embedded/bin/ruby $idk_rb "${@}"
