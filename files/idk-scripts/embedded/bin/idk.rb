@@ -25,9 +25,9 @@ class IDKCLI < Thor
       begin
         vp = VAR.join('user', Etc.getpwuid.name)
         if vp.exist?
-          ui.fatal "#{vp} is not owned by user" unless vp.owned?
-          ui.fatal "#{vp} is a symlink" if vp.symlink?
-          ui.fatal "#{vp} is not a directory" unless vp.directory?
+          fatal! "#{vp} is not owned by user" unless vp.owned?
+          fatal! "#{vp} is a symlink" if vp.symlink?
+          fatal! "#{vp} is not a directory" unless vp.directory?
         else
           vp.mkpath
         end
@@ -44,6 +44,12 @@ class IDKCLI < Thor
     ENV['GEM_HOME'] = user_gem_dir.to_s
     ENV['GEM_PATH'] = "#{user_gem_dir}:#{Gem.default_dir}"
     ENV['PATH'] = "/opt/idk/embedded/bin:#{user_gem_dir.join('bin')}:#{ENV['PATH']}"
+    say_status 'ADVICE', "Add this line to your .profile: source /opt/idk/profile.sh", :yellow
+  end
+
+  def fatal!(message)
+    say_status 'FATAL', message, :red
+    exit 1
   end
 end
 
