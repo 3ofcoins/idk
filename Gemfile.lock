@@ -12,8 +12,10 @@ GIT
       thor (>= 0.16.0)
       uber-s3
 
-PATH
-  remote: /Users/japhy/Projekty/Forks/opscode/omnibus-software
+GIT
+  remote: https://github.com/3ofcoins/opscode-omnibus-software.git
+  revision: 3ee773931334ac9e27ce086fd24acb71fd455e2c
+  branch: for/idk
   specs:
     omnibus-software (0.0.1)
 

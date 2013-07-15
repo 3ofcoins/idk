@@ -5,6 +5,5 @@ gem 'omnibus', '~> 1.2.0',
     branch: 'master'
 
 gem 'omnibus-software',
-    path: '/Users/japhy/Projekty/Forks/opscode/omnibus-software/'
-    # git: 'https://github.com/3ofcoins/opscode-omnibus-software.git',
-    # branch: 'master'
+    git: 'https://github.com/3ofcoins/opscode-omnibus-software.git',
+    branch: 'for/idk'
