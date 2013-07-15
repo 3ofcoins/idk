@@ -9,7 +9,7 @@ DEST_DIR=/opt/idk
 CONFIG_DIR=/etc/idk
 USAGE="usage: $0"
 
-error_exit()
+error_exit ()
 {
   echo "${PROGNAME}: ${1:-"Unknown Error"}" 1>&2
   exit 1
