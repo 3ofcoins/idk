@@ -13,14 +13,24 @@ class IDKCLI < Thor
   desc 'exec COMMAND ...', 'Run a shell command in IDK context'
   def exec(*command)
     setup_env
-    Kernel.exec(*command)
+    exec! *command
+  end
+
+  desc 'sudo COMMAND ...', 'Run a shell command in IDK context as root'
+  def sudo(*command)
+    setup_env
+    opts = (command.last.is_a?(Hash) ? command.pop : {})
+    opts[:as_root] = true
+    command << opts
+    exec! *command
   end
 
   desc :solo, 'Set up the workstation with chef-solo'
   def solo
     setup_env
     Dir::chdir "/opt/idk/solo" do
-      Kernel.exec(*maybe_sudo('chef-solo', '-c', 'solo.rb', '-j', 'dna.json'))
+      exec! 'chef-solo', '-c', 'solo.rb', '-j', 'dna.json',
+            as_root: true
     end
   end
 
@@ -55,21 +65,37 @@ class IDKCLI < Thor
     say_status 'ADVICE', "Add this line to your .profile: source /opt/idk/profile.sh", :yellow unless ENV['idk_profile_loaded']
   end
 
-  def maybe_sudo(*cmd)
-    if Process::Sys.getuid.zero?
-      cmd
-    else
-      if cmd.length == 1
-        "sudo #{cmd.first}"
-      else
-        ['sudo', *cmd]
-      end
-    end
-  end
-
   def fatal!(message)
     say_status 'FATAL', message, :red
     exit 1
+  end
+
+  def exec!(*command)
+    if command.last.is_a? Hash
+      options = command.pop
+    else
+      options = {}
+    end
+
+    command_str = command.join(' ')
+    if options[:as_root]
+      if Process::Sys.getuid.zero?
+        verb = :exec
+      else
+        verb = :sudo
+        if command.length == 1
+          command = ["sudo -E #{command.first}"]
+        else
+          command.unshift '-E'
+          command.unshift 'sudo'
+        end
+      end
+    else
+      verb = :exec
+    end
+
+    say_status verb, command_str, :green
+    Kernel.exec(*command)
   end
 end
 
