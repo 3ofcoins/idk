@@ -1,5 +1,7 @@
 # -*- ruby -*-
 site :opscode
+cookbook 'dmg', github: 'mpasternacki/dmg', branch: 'COOK-3331'
 cookbook 'git'
+cookbook 'git-annex'
 cookbook 'vagrant'
 cookbook 'virtualbox'
