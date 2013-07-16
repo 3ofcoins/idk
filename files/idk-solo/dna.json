@@ -1,0 +1,15 @@
+{
+  "run_list": [
+    "recipe[git]",
+    "recipe[virtualbox]",
+    "recipe[vagrant]"
+  ],
+  "vagrant": {
+    "plugins": [
+      "vagrant-berkshelf",
+      "vagrant-exec",
+      "vagrant-omnibus",
+      "vagrant-plugin-bundler"
+    ]
+  }
+}
