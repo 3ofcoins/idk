@@ -9,8 +9,8 @@ build do
   gemfile_dir = "#{install_dir}/embedded/etc"
   block do
     FileUtils.mkdir_p gemfile_dir
-    FileUtils.cp 'Gemfile', gemfile_dir
-    FileUtils.cp 'Gemfile.lock', gemfile_dir
+    FileUtils.cp "#{project_dir}/Gemfile", gemfile_dir, :verbose => true
+    FileUtils.cp "#{project_dir}/Gemfile.lock", gemfile_dir, :verbose => true
   end
-  bundle "install --gemfile=#{gemfile_dir}/Gemfile --deployment"
+  bundle "install --gemfile=#{gemfile_dir}/Gemfile"
 end
