@@ -12,7 +12,7 @@ dependency "preparation"
 dependency "chef-gem"
 dependency "berkshelf"
 dependency "idk-bundle"
-dependency "idk-scripts"
+dependency "idk-cli"
 dependency "idk-solo"
 
 dependency "version-manifest"
