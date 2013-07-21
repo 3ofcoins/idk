@@ -5,10 +5,25 @@ require 'minitest/autorun'
 require 'minitest/spec'
 require 'mocha/setup'
 require 'wrong'
-require 'wrong/adapters/minitest'
 
 Wrong.config.alias_assert :expect, override: true
-include Wrong
+
+module IDK
+  module Spec
+    module WrongHelper
+      include Wrong::Assert
+      include Wrong::Helpers
+
+      def increment_assertion_count
+        self.assertions += 1
+      end
+    end
+  end
+end
+
+class MiniTest::Spec
+  include IDK::Spec::WrongHelper
+end
 
 if ENV['COVERAGE']
   require 'simplecov'
@@ -16,4 +31,4 @@ if ENV['COVERAGE']
   SimpleCov.command_name 'rake spec'
 end
 
-require "idk-cli"
+require "idk/cli"

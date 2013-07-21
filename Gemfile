@@ -11,3 +11,5 @@ gem 'omnibus-software',
 group :development do
   gem 'pry'
 end
+
+gemspec path: 'files/idk-cli/'

@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "idk-cli"
-  spec.version       = ENV['IDK_CLI_VERSION'] || '0.0.0.UNSPECIFIED'
+  spec.version       = ENV['IDK_CLI_VERSION'] || '0.0.1.UNSPECIFIED'
   spec.authors       = ["Maciej Pasternacki"]
   spec.email         = ["maciej@3ofcoins.net"]
   spec.description   = "Infrastructure Development Kit CLI"
