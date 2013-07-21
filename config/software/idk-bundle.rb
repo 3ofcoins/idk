@@ -1,6 +1,7 @@
 name "idk-bundle"
 
 dependency "bundler"
+dependency "file"
 
 source path: File.expand_path("files/#{name}", Omnibus.project_root)
 
