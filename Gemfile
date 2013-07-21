@@ -7,3 +7,7 @@ gem 'omnibus', '~> 1.2.0',
 gem 'omnibus-software',
     git: 'https://github.com/3ofcoins/opscode-omnibus-software.git',
     branch: 'for/idk'
+
+group :development do
+  gem 'pry'
+end
