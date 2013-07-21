@@ -1,11 +1,10 @@
 # -*- mode: ruby; coding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'idk/cli/version'       # FIXME: omnibus version
 
 Gem::Specification.new do |spec|
   spec.name          = "idk-cli"
-  spec.version       = IDK::CLI_VERSION
+  spec.version       = ENV['IDK_CLI_VERSION'] || '0.0.0.UNSPECIFIED'
   spec.authors       = ["Maciej Pasternacki"]
   spec.email         = ["maciej@3ofcoins.net"]
   spec.description   = "Infrastructure Development Kit CLI"
@@ -13,7 +12,8 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/3ofcoins/idk/"
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files`.split($/)
+  spec.files         = Dir['**/*'].
+    select { |path| File.file?(path) && path !~ /^files\/|(?:\.gem|~)$/ }
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]

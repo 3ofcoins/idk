@@ -4,7 +4,10 @@ homepage "https://github.com/3ofcoins/idk/"
 
 replaces        "idk"
 install_path    "/opt/idk"
-build_version   Omnibus::BuildVersion.new.semver
+
+version, wip = Omnibus::BuildVersion.new.semver.split('+')
+version = Gem::Version.new(version).bump.to_s << '.wip' << wip if wip
+build_version version
 build_iteration 1
 
 dependency "preparation"

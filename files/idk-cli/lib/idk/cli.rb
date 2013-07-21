@@ -2,15 +2,16 @@ require 'pathname'
 
 require 'thor'
 
-require "idk/cli/version"
-
 module IDK
   class CLI < Thor
+    VERSION = Gem.loaded_specs['idk-cli'].version.to_s
+
     check_unknown_options! except: [ :exec ]
     stop_on_unknown_option! :exec
 
     map '-h' => :help,
-        '--help' => :help
+        '--help' => :help,
+        '--version' => :version
 
     desc 'exec COMMAND ...', 'Run a shell command in IDK context'
     def exec(*command)
@@ -35,6 +36,11 @@ module IDK
               as_root: true,
               verbose: true
       end
+    end
+
+    desc :version, 'Display version', :hidden => true
+    def version
+      puts "IDK #{VERSION}"
     end
 
     private

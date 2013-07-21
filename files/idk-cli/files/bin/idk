@@ -15,10 +15,10 @@ done
 
 # Allow hacking IDK
 unset idk_rubyopt
-if [ -n "IDK_CLI_PATH" ] ; then
+if [ -n "$IDK_CLI_PATH" ] ; then
     echo "# using CLI at $IDK_CLI_PATH"
     idk_rubyopt="-I$IDK_CLI_PATH/lib"
 fi
 
 export IDK0="$0"
-exec /opt/idk/embedded/bin/ruby $idk_rubyopt -rubygems -ridk/cli -e 'IDK::CLI.start(ARGV)' "${@}"
+exec /opt/idk/embedded/bin/ruby $idk_rubyopt -rubygems -ridk/cli -e '$0=ENV["IDK0"];IDK::CLI.start(ARGV)' -- "${@}"
