@@ -26,3 +26,17 @@ module IDK
     end
   end
 end
+
+class Omnibus < Thor
+  include Thor::Actions
+  desc 'build [SOFTWARE [...]]', 'Build Omnibus project or individual software'
+  def build(*softwares)
+    if softwares.empty?
+      run 'omnibus build project idk'
+    else
+      softwares.each do |software|
+        run "omnibus build software idk #{software}"
+      end
+    end
+  end
+end
