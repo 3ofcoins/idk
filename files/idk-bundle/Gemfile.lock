@@ -236,6 +236,7 @@ GEM
     ruby-hmac (0.4.0)
     rubyntlm (0.1.1)
     rubypants (0.2.0)
+    safe_yaml (0.9.4)
     savon (0.9.5)
       akami (~> 1.0)
       builder (>= 2.1.2)
@@ -249,6 +250,14 @@ GEM
     strainer (3.0.4)
       berkshelf (~> 2.0)
     systemu (2.5.2)
+    test-kitchen (1.0.0.alpha.7)
+      celluloid
+      mixlib-shellout
+      net-scp
+      net-ssh
+      pry
+      safe_yaml
+      thor
     thor (0.18.1)
     tilt (1.4.1)
     timers (1.1.0)
@@ -291,5 +300,5 @@ DEPENDENCIES
   nanodoc!
   pry
   strainer
-  thor
+  test-kitchen (~> 1.0.0.alpha7)
   vendorificator (= 0.5.git.v0.4.0.17.g26d50d8)
