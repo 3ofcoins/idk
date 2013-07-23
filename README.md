@@ -1,102 +1,67 @@
-# idk Omnibus project
+Infrastructure Development Kit
+==============================
 
-This project creates full-stack platform-specific packages for
-`idk`!
+Infrastructure Development Kit, or IDK, is a one-stop package
+containing software collection needed to develop and manage server
+infrastructure using Opscode Chef and related tools.
 
-## Installation
+> **WARNING:** this package is still alpha. It is still a bit of
+> a moving target, and you should expect some rough edges.
 
-We'll assume you have Ruby 1.9+ and Bundler installed. First ensure all
-required gems are installed and ready to use:
+Included software
+-----------------
 
-```shell
-$ bundle install
-```
+ - Chef 11.4.4
+ - Knife plugins:
+   - chef-vault
+   - knife-briefcase
+   - knife-config
+   - knife-dns-update
+   - knife-dwim
+   - knife-essentials
+ - Testing tools:
+   - Test Kitchen 1.0.0.alpha.7
+   - Chefspec 1.3.1
+   - Strainer 3.0.4
+   - Foodcritic 2.20
+ - Berkshelf 2.0.7
+ - Omnibus 1.2.0
+ - Pry 0.9.12.2
+ - Rake 10.1.0
+ - Thor 0.18.1
+ - Vendorificator 0.5-pre
 
-## Usage
+IDK includes also chef-solo recipes that make sure that following
+software is installed on your workstation:
 
-### Build
+ - Git
+ - Git-annex
+ - Virtualbox
+ - Vagrant
+ - Vagrant plugins:
+   - vagrant-plugin-bundler
+   - vagrant-berkshelf
+   - vagrant-omnibus
+   - vagrant-exec
 
-You create a platform-specific package using the `build project` command:
+Installation and setup
+----------------------
 
-```shell
-$ bundle exec omnibus build project idk
-```
+Download package for your OS from
+https://github.com/3ofcoins/idk/releases and install it. Then run
+`/opt/idk/bin/idk setup` to configure your workstation and
+environment. You should be ready to roll at that moment.
 
-The platform/architecture type of the package created will match the platform
-where the `build project` command is invoked. So running this command on say a
-MacBook Pro will generate a Mac OS X specific package. After the build
-completes packages will be available in `pkg/`.
+Usage
+-----
 
-### Clean
+If `idk setup` executed successfully, you should have all relevant
+commands in your path. Everything should Just Work. If it's not so,
+[please contact us](https://github.com/3ofcoins/idk/issues).
 
-You can clean up all temporary files generated during the build process with
-the `clean` command:
+Issues and Suggestions
+----------------------
 
-```shell
-$ bundle exec omnibus clean
-```
-
-Adding the `--purge` purge option removes __ALL__ files generated during the
-build including the project install directory (`/opt/idk`) and
-the package cache directory (`/var/cache/omnibus/pkg`):
-
-```shell
-$ bundle exec omnibus clean --purge
-```
-
-### Help
-
-Full help for the Omnibus command line interface can be accessed with the
-`help` command:
-
-```shell
-$ bundle exec omnibus help
-```
-
-## Vagrant-based Virtualized Build Lab
-
-Every Omnibus project ships will a project-specific
-[Berksfile](http://berkshelf.com/) and [Vagrantfile](http://www.vagrantup.com/)
-that will allow you to build your projects on the following platforms:
-
-* CentOS 5 64-bit
-* CentOS 6 64-bit
-* Ubuntu 10.04 64-bit
-* Ubuntu 11.04 64-bit
-* Ubuntu 12.04 64-bit
-
-Please note this build-lab is only meant to get you up and running quickly;
-there's nothing inherent in Omnibus that restricts you to just building CentOS
-or Ubuntu packages. See the Vagrantfile to add new platforms to your build lab.
-
-The only requirements for standing up this virtualized build lab are:
-
-* VirtualBox - native packages exist for most platforms and can be downloaded
-from the [VirtualBox downloads page](https://www.virtualbox.org/wiki/Downloads).
-* Vagrant 1.2.1+ - native packages exist for most platforms and can be downloaded
-from the [Vagrant downloads page](http://downloads.vagrantup.com/).
-
-The [vagrant-berkshelf](https://github.com/RiotGames/vagrant-berkshelf) and
-[vagrant-omnibus](https://github.com/schisamo/vagrant-omnibus) Vagrant plugins
-are also required and can be installed easily with the following commands:
-
-```shell
-$ vagrant plugin install vagrant-berkshelf
-$ vagrant plugin install vagrant-omnibus
-```
-
-Once the pre-requisites are installed you can build your package across all
-platforms with the following command:
-
-```shell
-$ vagrant up
-```
-
-If you would like to build a package for a single platform the command looks like this:
-
-```shell
-$ vagrant up PLATFORM
-```
-
-The complete list of valid platform names can be viewed with the
-`vagrant status` command.
+Please file any issues, questions, or suggestions (especially for
+other software that may need to be configured) at
+[GitHub Issues](https://github.com/3ofcoins/idk/issues).
