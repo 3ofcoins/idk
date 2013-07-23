@@ -20,7 +20,7 @@ Included software
    - knife-dwim
    - knife-essentials
  - Testing tools:
-   - Test Kitchen 1.0.0.alpha.7
+   - Test Kitchen 1.0.0.alpha.7 with kitchen-vagrant
    - Chefspec 1.3.1
    - Strainer 3.0.4
    - Foodcritic 2.20

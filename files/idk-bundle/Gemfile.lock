@@ -158,6 +158,8 @@ GEM
     i18n (0.6.1)
     ipaddress (0.8.0)
     json (1.7.7)
+    kitchen-vagrant (0.10.0)
+      test-kitchen (~> 1.0.0.alpha.6)
     knife-briefcase (0.1.0)
       chef
       gpgme
@@ -327,6 +329,7 @@ DEPENDENCIES
   chef-vault (~> 1.2.4)
   chefspec
   foodcritic
+  kitchen-vagrant
   knife-briefcase (~> 0.1.0)
   knife-config
   knife-dns-update
