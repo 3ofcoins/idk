@@ -206,6 +206,7 @@ GEM
     puma (1.6.3)
       rack (~> 1.2)
     rack (1.5.2)
+    rake (10.1.0)
     rbzip2 (0.2.0)
     rest-client (1.6.7)
       mime-types (>= 1.16)
@@ -302,6 +303,7 @@ DEPENDENCIES
   knife-essentials
   nanodoc!
   pry
+  rake
   strainer
   test-kitchen (~> 1.0.0.alpha7)
   vendorificator (= 0.5.git.v0.4.0.17.g26d50d8)
