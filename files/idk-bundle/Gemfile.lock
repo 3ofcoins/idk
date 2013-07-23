@@ -141,6 +141,8 @@ GEM
       chef
       gpgme
       highline
+    knife-config (1.1.0)
+      chef (>= 0.10.0)
     knife-dns-update (0.0.1)
       chef
       fog (~> 1.9)
@@ -294,6 +296,7 @@ DEPENDENCIES
   chefspec
   foodcritic
   knife-briefcase (~> 0.1.0)
+  knife-config
   knife-dns-update
   knife-dwim
   knife-essentials
