@@ -15,6 +15,7 @@ wrapped = [
   'thor',
   'vendor' ]
 
+dependency "rsync"
 dependency "ruby"
 dependency "rubygems"
 
