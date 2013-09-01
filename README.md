@@ -5,26 +5,27 @@ Infrastructure Development Kit, or IDK, is a one-stop package
 containing software collection needed to develop and manage server
 infrastructure using Opscode Chef and related tools.
 
-> **WARNING:** this package is still alpha. It is still a bit of
-> a moving target, and you should expect some rough edges.
+> **WARNING:** this package is still alpha. Rough edges expected.
 
 Included software
 -----------------
 
- - Chef 11.4.4
+ - Chef 11.6.0
  - Knife plugins:
    - chef-vault
+   - knife-backup
    - knife-briefcase
+   - knife-cleanup
    - knife-config
    - knife-dns-update
    - knife-dwim
    - knife-essentials
  - Testing tools:
-   - Test Kitchen 1.0.0.alpha.7 with kitchen-vagrant
-   - Chefspec 1.3.1
-   - Strainer 3.0.4
-   - Foodcritic 2.20
- - Berkshelf 2.0.7
+   - Test Kitchen 1.0.0.beta.3 with kitchen-vagrant
+   - Chefspec 2.0.1
+   - Strainer 3.3.0
+   - Foodcritic 2.2.0
+ - Berkshelf 2.0.9
  - Omnibus 1.2.0
  - Pry 0.9.12.2
  - Rake 10.1.0
