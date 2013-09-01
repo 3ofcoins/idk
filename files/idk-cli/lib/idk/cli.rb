@@ -141,7 +141,8 @@ module IDK
         end
       ].join(':')
 
-      # Sanity check
+      # Sanity check (redundant on `idk setup`)
+      return if File.basename($0) == 'idk' && ARGV.first == 'setup'
       setup_stamp = Path::VAR.join('setup.stamp')
       if !setup_stamp.exist?
         shell.say_status 'WARNING',
@@ -157,7 +158,7 @@ module IDK
         shell.say_status 'ADVICE',
                          'Run "idk setup" to configure your environment',
                          :yellow
-      elsif !ENV['idk_profile_loaded']
+      elsif (!!ENV['idk_interactive']) && (!ENV['idk_profile_loaded'])
         shell.say_status 'WARNING',
                          'Unconfigured environment',
                          :red
