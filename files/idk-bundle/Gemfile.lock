@@ -317,7 +317,7 @@ GEM
     varia_model (0.2.0)
       buff-extensions (~> 0.2)
       hashie (>= 2.0.2)
-    vendorificator (0.5.git.v0.4.0.17.g26d50d8)
+    vendorificator (0.5.git.v0.4.0.60.g9c35209)
       awesome_print
       escape
       minigit (>= 0.0.3)
@@ -356,4 +356,4 @@ DEPENDENCIES
   rake
   strainer
   test-kitchen (~> 1.0.0.alpha7)
-  vendorificator (= 0.5.git.v0.4.0.17.g26d50d8)
+  vendorificator (= 0.5.git.v0.4.0.60.g9c35209)

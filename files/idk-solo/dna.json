@@ -3,7 +3,7 @@
     "recipe[git]",
     "recipe[git-annex]",
     "recipe[virtualbox]",
-    "recipe[vagrant]"
+    "recipe[idk::vagrant]"
   ],
   "vagrant": {
     "plugins": [

@@ -17,4 +17,8 @@ chmod 1777 /var/local/lib/idk/user
 
 echo "Thank you for installing idk!"
 
+if [ ! -f /var/local/lib/idk/setup.stamp ] ; then
+    echo "To set up IDK, run \`/opt/idk/bin/idk setup\' in your user account."
+fi
+
 exit 0
