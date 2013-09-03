@@ -29,6 +29,10 @@ module IDK
         end
     end
 
+    def self.setup_stamp
+      user_var.join('setup.stamp')
+    end
+
     def self.gem_home
       @user_gem_home ||= user_var.join('rubygems', 'default').to_s
     end
@@ -94,6 +98,10 @@ module IDK
         create_link File.join(ENV['idk_rvm_path'], 'hooks', 'after_use_idk'),
                     profile_sh
       end
+
+      create_file Path.setup_stamp
+
+      shell.say_status 'DONE', "Now run `source /opt/idk/profile.sh' or log out and log in again", :green
     end
 
     desc :version, 'Display version', :hidden => true
@@ -137,17 +145,9 @@ module IDK
 
       # Sanity check (redundant on `idk setup`)
       return if File.basename($0) == 'idk' && ARGV.first == 'setup'
-      setup_stamp = Path::VAR.join('setup.stamp')
-      if !setup_stamp.exist?
+      if !Path.setup_stamp.exist?
         shell.say_status 'WARNING',
                          'Unconfigured workstation',
-                         :red
-        shell.say_status 'ADVICE',
-                         'Run "idk setup" to configure your environment',
-                         :yellow
-      elsif (setup_v = setup_stamp.read.strip) != VERSION.to_s.strip
-        shell.say_status 'WARNING',
-                         "Workstation configured for version #{setup_v}, not currently installed #{VERSION}.",
                          :red
         shell.say_status 'ADVICE',
                          'Run "idk setup" to configure your environment',
