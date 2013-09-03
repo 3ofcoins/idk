@@ -1,7 +1,4 @@
-#!/bin/bash
-#
-# Install a full idk
-#
+#!/bin/sh
 
 PROGNAME=`basename $0`
 INSTALLER_DIR=`dirname $0`
@@ -21,7 +18,13 @@ mkdir -p $DEST_DIR || error_exit "Cannot create $DEST_DIR"
 cp -R $INSTALLER_DIR $DEST_DIR || error_exit "Cannot install to $DEST_DIR"
 rm -f $DEST_DIR/$PROGNAME
 
-# You may want to symlink your packages bin files into /usr/bin
-# ln -sf $DEST_DIR/bin/idk /usr/bin || error_exit "Cannot link idk to /usr/bin"
+user_dir='/var/local/lib/idk/user'
+mkdir -p "$user_dir" || error_exit "Cannot create $user_dir"
+chmod 1777 "$user_dir"
+
+cd $DEST_DIR/solo
+$DEST_DIR/bin/chef-solo -c solo.rb -j dna.json || error_exit 'Failed chef-solo run'
+
+ln -sf $DEST_DIR/bin/idk /usr/bin || error_exit "Cannot link idk to /usr/bin"
 
 exit 0

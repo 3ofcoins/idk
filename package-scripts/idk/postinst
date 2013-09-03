@@ -1,8 +1,4 @@
 #!/bin/sh
-#
-# Perform necessary idk setup steps
-# after package is installed.
-#
 
 PROGNAME="`basename "$0"`"
 
@@ -12,13 +8,13 @@ error_exit ()
   exit 1
 }
 
-mkdir -p /var/local/lib/idk/user
-chmod 1777 /var/local/lib/idk/user
+user_dir='/var/local/lib/idk/user'
+mkdir -p "$user_dir" || error_exit "Cannot create $user_dir"
+chmod 1777 "$user_dir"
 
-echo "Thank you for installing idk!"
+cd /opt/idk/solo
+/opt/idk/bin/chef-solo -c solo.rb -j dna.json || error_exit 'Failed chef-solo run'
 
-if [ ! -f /var/local/lib/idk/setup.stamp ] ; then
-    echo "To set up IDK, run \`/opt/idk/bin/idk setup\' in your user account."
-fi
+ln -sf /opt/idk/bin/idk /usr/bin/ || error_exit "Cannot link idk to /usr/bin"
 
 exit 0

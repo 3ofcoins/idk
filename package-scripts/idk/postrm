@@ -1,9 +1,5 @@
-#!/bin/bash
-#
-# Perform necessary idk removal steps
-# after package is uninstalled.
-#
+#!/bin/sh
 
-echo "idk has been uninstalled!"
+rm -f /usr/bin/idk
 
 exit 0

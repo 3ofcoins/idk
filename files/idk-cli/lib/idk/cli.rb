@@ -94,14 +94,6 @@ module IDK
         create_link File.join(ENV['idk_rvm_path'], 'hooks', 'after_use_idk'),
                     profile_sh
       end
-
-      inside Path::SOLO do
-        run 'sudo -E chef-solo -c solo.rb -j dna.json'
-      end
-
-      fatal! 'chef-solo failed' unless $?.success?
-
-      run "echo #{Shellwords.escape(VERSION)} | sudo tee #{Shellwords.escape(Path::VAR.join('setup.stamp').to_s)}"
     end
 
     desc :version, 'Display version', :hidden => true
