@@ -99,7 +99,7 @@ module IDK
         run 'sudo -E chef-solo -c solo.rb -j dna.json'
       end
 
-      fatal! 'chef-solo failed' unless $?.success
+      fatal! 'chef-solo failed' unless $?.success?
 
       run "echo #{Shellwords.escape(VERSION)} | sudo tee #{Shellwords.escape(Path::VAR.join('setup.stamp').to_s)}"
     end
