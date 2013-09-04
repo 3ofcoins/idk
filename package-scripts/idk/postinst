@@ -13,7 +13,7 @@ mkdir -p "$user_dir" || error_exit "Cannot create $user_dir"
 chmod 1777 "$user_dir"
 
 cd /opt/idk/solo
-/opt/idk/bin/chef-solo -c solo.rb -j dna.json || error_exit 'Failed chef-solo run'
+/opt/idk/bin/idk exec chef-solo -c solo.rb -j dna.json || error_exit 'Failed chef-solo run'
 
 ln -sf /opt/idk/bin/idk /usr/bin/ || error_exit "Cannot link idk to /usr/bin"
 
