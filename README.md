@@ -49,8 +49,8 @@ Installation and setup
 ----------------------
 
 Download package for your OS from
-https://github.com/3ofcoins/idk/releases and install it. Then run
-`/opt/idk/bin/idk setup` to configure your workstation and
+https://github.com/3ofcoins/idk/releases and install it. Then, as a
+user, run `idk setup` to configure your workstation and
 environment. You should be ready to roll at that moment.
 
 Usage
@@ -58,7 +58,7 @@ Usage
 
 If `idk setup` executed successfully, you should have all relevant
 commands in your path. Everything should Just Work. If it's not so,
-[please contact us](https://github.com/3ofcoins/idk/issues).
+[it's an issue](https://github.com/3ofcoins/idk/issues).
 
 Issues and Suggestions
 ----------------------

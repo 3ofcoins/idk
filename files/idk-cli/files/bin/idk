@@ -33,4 +33,4 @@ if [ -n "$PS1" ] ; then
 fi
 
 export IDK0="$0"
-exec /opt/idk/embedded/bin/ruby $idk_rubyopt -e 'IDK::CLI.start' -- "${@}"
+exec /opt/idk/embedded/bin/ruby $idk_rubyopt -e 'IDK::CLI::Main.start' -- "${@}"

@@ -22,9 +22,8 @@ user_dir='/var/local/lib/idk/user'
 mkdir -p "$user_dir" || error_exit "Cannot create $user_dir"
 chmod 1777 "$user_dir"
 
-cd $DEST_DIR/solo
-$DEST_DIR/bin/idk exec chef-solo -c solo.rb -j dna.json || error_exit 'Failed chef-solo run'
-
 ln -sf $DEST_DIR/bin/idk /usr/bin || error_exit "Cannot link idk to /usr/bin"
+
+echo 'Now run `idk setup` command from your user account to complete installation.'
 
 exit 0
