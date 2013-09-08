@@ -10,3 +10,4 @@
 /tmp
 /bin
 /.kitchen
+.DS_Store
