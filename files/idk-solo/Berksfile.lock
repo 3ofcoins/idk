@@ -6,10 +6,10 @@
       "ref": "6bbe1bdf6934b3e68a21c6f7ff19db37f25ee0d1"
     },
     "git": {
-      "locked_version": "2.2.0"
+      "locked_version": "2.6.0"
     },
     "git-annex": {
-      "locked_version": "0.1.0"
+      "locked_version": "0.1.1"
     },
     "vagrant": {
       "locked_version": "0.2.0"
@@ -18,10 +18,10 @@
       "locked_version": "1.0.0"
     },
     "build-essential": {
-      "locked_version": "1.4.0"
+      "locked_version": "1.4.2"
     },
     "yum": {
-      "locked_version": "2.3.0"
+      "locked_version": "2.3.2"
     },
     "windows": {
       "locked_version": "1.10.0"
@@ -30,10 +30,10 @@
       "locked_version": "1.1.4"
     },
     "runit": {
-      "locked_version": "0.16.2"
+      "locked_version": "1.1.6"
     },
     "apt": {
-      "locked_version": "2.0.0"
+      "locked_version": "2.1.1"
     }
   }
 }
