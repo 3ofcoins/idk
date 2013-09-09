@@ -15,22 +15,18 @@ Vagrant.configure("2") do |config|
 
   config.vm.hostname = "#{project_name}-omnibus-build-lab"
 
-  config.vm.define 'ubuntu-10.04' do |c|
-    c.berkshelf.berksfile_path = "./Berksfile"
-    c.vm.box = "opscode_ubuntu-10.04_provisionerless"
-    c.vm.box_url = 'https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-10.04_provisionerless.box'
-  end
-
-  config.vm.define 'ubuntu-12.04' do |c|
-    c.berkshelf.berksfile_path = "./Berksfile"
-    c.vm.box = "opscode-ubuntu-12.04"
-    c.vm.box_url = 'https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_provisionerless.box'
-  end
-
-  config.vm.define 'ubuntu-13.04' do |c|
-    c.berkshelf.berksfile_path = "./Berksfile"
-    c.vm.box = "opscode-ubuntu-13.04"
-    c.vm.box_url = 'https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-13.04_provisionerless.box'
+  [ 'https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-10.04_provisionerless.box',
+    'https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-10.04-i386_provisionerless.box',
+    'https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04_provisionerless.box',
+    'https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-12.04-i386_provisionerless.box',
+    'https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_ubuntu-13.04_provisionerless.box' ].each do |box_url|
+    box_name = File.basename(box_url, '.box')
+    vm_name = ( box_name =~ /^opscode_(.*)_provisionerless$/ ? $1 : box_name )
+    config.vm.define vm_name do |c|
+      c.berkshelf.berksfile_path = "./Berksfile"
+      c.vm.box = box_name
+      c.vm.box_url = box_url
+    end
   end
 
   config.vm.provider :virtualbox do |vb|
