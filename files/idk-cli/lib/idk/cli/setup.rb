@@ -42,14 +42,17 @@ module IDK
         end
 
         create_file Path.setup_stamp
-
-        shell.say_status 'DONE', "Now run `source /opt/idk/profile.sh' or log out and log in again", :green
       end
 
       def system
         inside '/opt/idk/solo' do
-          exec! 'chef-solo', '-c', 'solo.rb', '-j', 'dna.json', as_root: true
+          run 'sudo', 'chef-solo', '-c', 'solo.rb', '-j', 'dna.json'
+          fatal! 'chef-solo failed' unless $?.success?
         end
+      end
+
+      def final_notice
+        shell.say_status 'Finished.', "Now run `source /opt/idk/profile.sh' or log out and log in again", :green
       end
     end
   end
