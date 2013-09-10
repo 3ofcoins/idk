@@ -6,9 +6,16 @@ module IDK
     class Setup < Thor::Group
       include Actions
 
-      "Set up development environment"
+      desc "Set up development environment"
 
-      def user
+      def chef_solo
+        inside '/opt/idk/solo' do
+          run 'chef-solo -c solo.rb -j dna.json', with: 'sudo'
+          fatal! 'chef-solo failed' unless $?.success?
+        end
+      end
+
+      def user_profile
         profile_sh = Path::ROOT.join('profile.sh')
 
         inside ENV['HOME'] do
@@ -35,20 +42,17 @@ module IDK
             append_to_file profile, "\n# Infrastructure Development Kit\nif test -s #{profile_sh} ; then source #{profile_sh} ; fi\n"
           end
         end
+      end
 
+      def rvm_after_use_hook
         if ENV['idk_rvm_path']
           create_link File.join(ENV['idk_rvm_path'], 'hooks', 'after_use_idk'),
                       profile_sh
         end
-
-        create_file Path.setup_stamp
       end
 
-      def system
-        inside '/opt/idk/solo' do
-          run 'chef-solo -c solo.rb -j dna.json', with: 'sudo'
-          fatal! 'chef-solo failed' unless $?.success?
-        end
+      def stamp
+        create_file Path.setup_stamp
       end
 
       def final_notice
