@@ -46,7 +46,7 @@ module IDK
 
       def system
         inside '/opt/idk/solo' do
-          run 'sudo', 'chef-solo', '-c', 'solo.rb', '-j', 'dna.json'
+          run 'chef-solo -c solo.rb -j dna.json', with: 'sudo'
           fatal! 'chef-solo failed' unless $?.success?
         end
       end
