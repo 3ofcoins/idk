@@ -10,7 +10,7 @@ module IDK
 
       def chef_solo
         inside '/opt/idk/solo' do
-          run 'chef-solo -c solo.rb -j dna.json', with: 'sudo'
+          run 'chef-solo -c solo.rb -j dna.json', with: 'idk sudo'
           fatal! 'chef-solo failed' unless $?.success?
         end
       end
@@ -45,6 +45,7 @@ module IDK
       end
 
       def rvm_after_use_hook
+        profile_sh = Path::ROOT.join('profile.sh')
         if ENV['idk_rvm_path']
           create_link File.join(ENV['idk_rvm_path'], 'hooks', 'after_use_idk'),
                       profile_sh

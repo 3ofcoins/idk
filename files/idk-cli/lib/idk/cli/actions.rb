@@ -3,7 +3,6 @@ module IDK
     module Actions
       include Thor::Actions
 
-
       def fatal!(message)
         say_status 'FATAL', message, :red
         exit 1
@@ -23,10 +22,9 @@ module IDK
           else
             verb = :sudo
             if command.length == 1
-              command = ["sudo -E #{command.first}"]
+              command = ["sudo /opt/idk/bin/idk exec #{command.first}"]
             else
-              command.unshift '-E'
-              command.unshift 'sudo'
+              command = [ 'sudo', '/opt/idk/bin/idk', 'exec' ] + command
             end
           end
         else
