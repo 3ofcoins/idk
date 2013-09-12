@@ -39,4 +39,19 @@ class Omnibus < Thor
       end
     end
   end
+
+  DOCKER_PLATFORMS=%w[raring64 precise64 lucid64 precise32 lucid32]
+  desc 'docker_build [PLATFORM ...]', "Build with Docker on PLATFORMs (default: #{DOCKER_PLATFORMS.join(' ')})"
+  def docker_build(*platforms)
+    platforms = DOCKER_PLATFORMS if platforms.empty?
+    failed = []
+    platforms.each do |platform|
+      run "time docker run -v=`pwd`:/src mpasternacki/#{platform}:omnibus-builder"
+      unless $?.success?
+        say_status :failed, "#{platform} build failed (#{$?})", :red
+        failed << platform
+      end
+    end
+    say_status 'FAILED', failed.join(', '), :red unless failed.empty?
+  end
 end
