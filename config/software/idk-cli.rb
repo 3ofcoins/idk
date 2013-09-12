@@ -1,5 +1,5 @@
 name "idk-cli"
-version project.build_version
+version project.build_version.gsub(/[^a-z0-9\.]+/, '.')
 
 # List of wrapped tools that will be added to $PATH
 wrapped = [
