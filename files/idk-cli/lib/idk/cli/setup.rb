@@ -58,7 +58,7 @@ module IDK
       end
 
       def final_notice
-        shell.say_status 'Finished.', "Now run `source /opt/idk/profile.sh' or log out and log in again", :green
+        shell.say_status :done, "Now run `source /opt/idk/profile.sh' or log out and log in again", :green
       end
     end
   end
