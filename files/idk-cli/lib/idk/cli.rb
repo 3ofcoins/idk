@@ -74,7 +74,7 @@ module IDK
         ].join(':')
 
         # Sanity check (redundant on `idk setup`)
-        return if File.basename($0) == 'idk' && ARGV.first == 'setup'
+        return if (File.basename($0) == 'idk' && ARGV.first == 'setup') || ENV['idk_skip_warning']
         if !Path.setup_stamp.exist?
           shell.say_status 'WARNING',
                            'Unconfigured workstation',
