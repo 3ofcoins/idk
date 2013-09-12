@@ -10,7 +10,8 @@ module IDK
 
       def chef_solo
         inside '/opt/idk/solo' do
-          run 'chef-solo -c solo.rb -j dna.json', with: 'idk sudo'
+          shell.say_status :run, '[/opt/idk/solo] sudo chef-solo -c solo.rb -j dna.json'
+          run 'idk sudo env idk_skip_warning=1 chef-solo -c solo.rb -j dna.json', verbose: false
           fatal! 'chef-solo failed' unless $?.success?
         end
       end
