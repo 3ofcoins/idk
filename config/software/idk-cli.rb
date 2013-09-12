@@ -6,6 +6,7 @@ wrapped = [
   'berks',
   'chef-apply',
   'chef-shell',
+  'chef-solo',
   'chef-zero',
   'foodcritic',
   'kitchen',
