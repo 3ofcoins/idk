@@ -12,8 +12,8 @@ module IDK
     class Main < Thor
       include Actions
 
-      check_unknown_options! except: [ :exec ]
-      stop_on_unknown_option! :exec
+      check_unknown_options! except: [ :exec, :sudo ]
+      stop_on_unknown_option! :exec, :sudo
 
       map '-h' => :help,
           '--help' => :help,
