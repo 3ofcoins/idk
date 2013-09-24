@@ -14,6 +14,7 @@ wrapped = [
   'mina',
   'shef',
   'strainer',
+  'thor',
   'vendor' ]
 
 dependency "rsync"
