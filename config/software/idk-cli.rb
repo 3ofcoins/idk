@@ -11,9 +11,9 @@ wrapped = [
   'foodcritic',
   'kitchen',
   'knife',
+  'mina',
   'shef',
   'strainer',
-  'thor',
   'vendor' ]
 
 dependency "rsync"
