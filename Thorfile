@@ -8,20 +8,49 @@ require 'rake/testtask'
 require 'thor/rake_compat'
 
 module IDK
-  class CLI < Thor
-    namespace 'idk:cli'
-    include Thor::RakeCompat
+  class Tasks < Thor
+    namespace 'idk'
     include Thor::Actions
 
-    Rake::TestTask.new :spec do |task|
-      task.libs << 'spec'
-      task.test_files = FileList['spec/**/*_spec.rb']
+    desc 'describe_release [VERSION]',
+         'Generate a Markdown list of download links for a release'
+    def describe_release(version=nil)
+      require 'filesize'
+      require 'fog'
+      require 'minigit'
+
+      version ||= MiniGit::Capturing.describe.strip.sub(/-.*$/, '')
+
+      puts "Infrastructure Development Kit #{version}\n#{'=' * (31+version.length)}\n"
+
+      connection = Fog::Storage.new(
+        provider: 'AWS',
+        aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+        aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'])
+      bucket = connection.directories.get('downloads.3ofcoins.net')
+      bucket.files.all(prefix: "idk/#{version}").each do |file|
+        next if file.key =~ /\.json$/
+        pretty_size = Filesize.from("#{file.content_length} B").pretty
+        public_url = file.service.request_url(bucket_name: bucket.key, object_name: file.key)
+        puts " - [#{File.basename(file.key)}](#{public_url}) (#{pretty_size})"
+      end
     end
 
-    desc 'spec', 'Run specs'
-    def spec
-      inside 'files/idk-cli' do
-        Rake::Task['spec'].execute
+    class CLI < Thor
+      namespace 'idk:cli'
+      include Thor::RakeCompat
+      include Thor::Actions
+
+      Rake::TestTask.new :spec do |task|
+        task.libs << 'spec'
+        task.test_files = FileList['spec/**/*_spec.rb']
+      end
+
+      desc 'spec', 'Run specs'
+      def spec
+        inside 'files/idk-cli' do
+          Rake::Task['spec'].execute
+        end
       end
     end
   end

@@ -9,6 +9,9 @@ gem 'omnibus-software',
     branch: 'for/idk'
 
 group :development do
+  gem 'filesize'
+  gem 'fog'
+  gem 'minigit'
   gem 'pry'
 end
 
