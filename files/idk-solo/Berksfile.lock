@@ -9,7 +9,7 @@
       "locked_version": "2.6.0"
     },
     "git-annex": {
-      "locked_version": "0.1.1"
+      "locked_version": "0.1.2"
     },
     "vagrant": {
       "locked_version": "0.2.0"
