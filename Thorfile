@@ -26,7 +26,8 @@ module IDK
       connection = Fog::Storage.new(
         provider: 'AWS',
         aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-        aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'])
+        aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+        path_style: true)
       bucket = connection.directories.get('downloads.3ofcoins.net')
       bucket.files.all(prefix: "idk/#{version}").each do |file|
         next if file.key =~ /\.json$/
