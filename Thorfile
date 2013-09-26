@@ -33,7 +33,15 @@ module IDK
         next if file.key =~ /\.json$/
         pretty_size = Filesize.from("#{file.content_length} B").pretty
         public_url = file.service.request_url(bucket_name: bucket.key, object_name: file.key)
-        puts " - [#{File.basename(file.key)}](#{public_url}) (#{pretty_size})"
+
+        remarks = case File.basename(file.key)
+                  when /mac_os_x\.10\.7\.\d+\.sh$/
+                    'also for OSX 10.6'
+                  end
+
+        line = " - [#{File.basename(file.key)}](#{public_url}) &mdash; #{pretty_size}"
+        line << " (#{remarks})" if remarks
+        puts line
       end
     end
 
