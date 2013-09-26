@@ -21,10 +21,13 @@ module IDK
             verb = :exec
           else
             verb = :sudo
+
+            _sudo = 'sudo env idk_skip_warning=1 /opt/idk/bin/idk exec'
+
             if command.length == 1
-              command = ["sudo /opt/idk/bin/idk exec #{command.first}"]
+              command = ["#{_sudo} #{command.first}"]
             else
-              command = [ 'sudo', '/opt/idk/bin/idk', 'exec' ] + command
+              command = _sudo.split + command
             end
           end
         else
