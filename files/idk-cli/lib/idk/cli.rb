@@ -19,17 +19,11 @@ module IDK
           '--help' => :help,
           '--version' => :version
 
-      desc 'exec COMMAND ...', 'Run a shell command in IDK context'
+      desc 'exec COMMAND ...', 'Execute a command in IDK context'
+      method_option :root, :type => :boolean,
+                    :desc => 'Execute the command as root, using `sudo` if necessary'
       def exec(*command)
-        exec! *command
-      end
-
-      desc 'sudo COMMAND ...', 'Run a shell command in IDK context as root'
-      def sudo(*command)
-        opts = (command.last.is_a?(Hash) ? command.pop : {})
-        opts[:as_root] = true
-        command << opts
-        exec! *command
+        exec! *command, :as_root => options[:root]
       end
 
       desc :setup, 'Configure system'
@@ -42,7 +36,7 @@ module IDK
           chef_solo_command << ' -l debug' if options[:debug]
 
           shell.say_status :run, "[/opt/idk/solo] #{chef_solo_command}"
-          run "idk sudo #{chef_solo_command}", verbose: false
+          run "idk exec --root #{chef_solo_command}", verbose: false
           fatal! 'chef-solo failed' unless $?.success?
         end
 
