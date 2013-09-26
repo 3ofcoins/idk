@@ -2,6 +2,6 @@
 site :opscode
 cookbook 'dmg', github: 'mpasternacki/dmg', branch: 'COOK-3331'
 cookbook 'git'
-cookbook 'git-annex', '~> 0.1.2'
+cookbook 'git-annex', '~> 0.1.3'
 cookbook 'vagrant'
-cookbook 'virtualbox'
+cookbook 'virtualbox', github: 'peplin/virtualbox-cookbook', branch: 'master'
