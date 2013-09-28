@@ -1,6 +1,34 @@
 Changes
 =======
 
+0.0.6
+-----
+ - Include knife-annex
+ - Unify var directory in /var/local/idk
+ - Handle situation when `user_var` doesn't exist and can't be created
+ - Bump Chef gems
+
+0.0.5
+-----
+ - Drop `idk sudo`, it's `idk exec --root` now
+ - Bump solo cookbooks
+ - Kind of support Snow Leopard
+
+0.0.4
+-----
+ - Add knife-ec2
+ - Script fix for makeselfinst
+ - Include Mina
+
+0.0.3
+-----
+ - Fix sudo
+ - Link chef-solo
+ - Correctly run chef-solo
+ - UX consistency
+ - Build with Docker
+ - Bump gems
+
 0.0.2
 -----
 
