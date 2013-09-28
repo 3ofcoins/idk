@@ -100,6 +100,11 @@ module IDK
 
       private
 
+      def self.skip_warnings?
+        ( File.basename($0) == 'idk' && ARGV.first == 'setup' ) ||
+          ENV['idk_skip_warning']
+      end
+
       def self.setup_env(shell=nil)
         shell ||= Thor::Base.shell.net
 
@@ -117,8 +122,16 @@ module IDK
         ].join(':')
 
         # Sanity check (redundant on `idk setup`)
-        return if (File.basename($0) == 'idk' && ARGV.first == 'setup') || ENV['idk_skip_warning']
-        if !Path.setup_stamp.exist?
+        return if skip_warnings?
+
+        if !Path.user_var.exist?
+          shell.say_status 'WARNING',
+                           "#{Path.user_var} does not exist",
+                           :red
+          shell.say_status 'ADVICE',
+                           'Try running "idk setup" to configure your environment',
+                           :yellow
+        elsif !Path.setup_stamp.exist?
           shell.say_status 'WARNING',
                            'Unconfigured workstation',
                            :red

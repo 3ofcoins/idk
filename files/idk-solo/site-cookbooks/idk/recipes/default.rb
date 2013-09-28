@@ -23,3 +23,15 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
+
+#
+# These should have been done by postinst, but it won't hurt to
+# double-check in case the directory has been removed for some reason.
+
+directory '/var/local/idk' do
+  recursive true
+end
+
+directory '/var/local/idk/user' do
+  mode '1777'
+end

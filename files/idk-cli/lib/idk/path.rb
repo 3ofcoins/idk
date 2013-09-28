@@ -17,7 +17,12 @@ module IDK
             fatal! "#{user_var} is a symlink" if user_var.symlink?
             fatal! "#{user_var} is not a directory" unless user_var.directory?
           else
-            user_var.mkpath
+            begin
+              user_var.mkpath
+            rescue => e
+              warn "WARNING: Can't create #{user_var} (#{e}), proceeding without it."
+              return user_var
+            end
           end
           user_var.chmod(0700)
           user_var
