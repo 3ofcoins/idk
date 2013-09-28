@@ -21,7 +21,14 @@ module IDK
 
       version ||= MiniGit::Capturing.describe.strip.sub(/-.*$/, '')
 
-      puts "Infrastructure Development Kit #{version}\n#{'=' * (31+version.length)}\n"
+      puts <<EOF
+Infrastructure Development Kit #{version}
+===============================#{'=' * version.length}
+
+Downloads
+---------
+
+EOF
 
       connection = Fog::Storage.new(
         provider: 'AWS',
@@ -42,6 +49,29 @@ module IDK
         line = " - [#{File.basename(file.key)}](#{public_url}) &mdash; #{pretty_size}"
         line << " (#{remarks})" if remarks
         puts line
+      end
+
+      puts <<EOF
+
+Changes
+-------
+
+EOF
+      found = nil
+      prev = nil
+      File.open('CHANGELOG.md').lines.each do |line|
+        line.strip!
+        if !found
+          found = true if line == version
+          next
+        end
+
+        if line =~ /^-+$/
+          if prev then break else next end
+        end
+
+        puts prev if prev && !prev.empty?
+        prev = line
       end
     end
 
