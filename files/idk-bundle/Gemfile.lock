@@ -112,7 +112,7 @@ GEM
     json (1.7.7)
     kitchen-vagrant (0.11.1)
       test-kitchen (~> 1.0.0.beta.3)
-    knife-annex (0.0.1)
+    knife-annex (0.0.2)
       chef-vault (>= 2.0.0)
     knife-backup (0.0.8)
       chef (>= 0.10.10)
@@ -244,7 +244,7 @@ DEPENDENCIES
   chefspec
   foodcritic
   kitchen-vagrant
-  knife-annex
+  knife-annex (~> 0.0.2)
   knife-backup
   knife-briefcase (~> 0.1.0)
   knife-cleanup
