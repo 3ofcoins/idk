@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
 
 gem 'awesome_print'
-gem 'chef-vault', '~> 1.2.4'
+gem 'chef-vault', '>= 2.0.0'
 gem 'chefspec'
 gem 'foodcritic'
 gem 'kitchen-vagrant'
+gem 'knife-annex'
 gem 'knife-backup'
 gem 'knife-briefcase', '~> 0.1.0'
 gem 'knife-cleanup'
