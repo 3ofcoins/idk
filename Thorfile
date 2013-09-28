@@ -67,9 +67,15 @@ end
 
 class Omnibus < Thor
   include Thor::Actions
+
   desc 'build [SOFTWARE [...]]', 'Build Omnibus project or individual software'
+  method_option :purge, type: :boolean, desc: 'Do a clean build (meaningful only with a full build)'
   def build(*softwares)
     if softwares.empty?
+      if options[:purge]
+        remove_file '/opt/idk'
+        run 'omnibus clean --purge idk'
+      end
       run 'omnibus build project idk'
     else
       softwares.each do |software|
