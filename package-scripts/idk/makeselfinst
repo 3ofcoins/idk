@@ -18,7 +18,7 @@ mkdir -p $DEST_DIR || error_exit "Cannot create $DEST_DIR"
 cp -R $INSTALLER_DIR $DEST_DIR || error_exit "Cannot install to $DEST_DIR"
 rm -f $DEST_DIR/$PROGNAME
 
-user_dir='/var/local/lib/idk/user'
+user_dir='/var/local/idk/user'
 mkdir -p "$user_dir" || error_exit "Cannot create $user_dir"
 chmod 1777 "$user_dir"
 

@@ -8,7 +8,7 @@ error_exit ()
   exit 1
 }
 
-user_dir='/var/local/lib/idk/user'
+user_dir='/var/local/idk/user'
 mkdir -p "$user_dir" || error_exit "Cannot create $user_dir"
 chmod 1777 "$user_dir"
 

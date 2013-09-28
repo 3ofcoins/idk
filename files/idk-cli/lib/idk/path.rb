@@ -6,7 +6,7 @@ module IDK
     EMBEDDED = ROOT.join('embedded')
     SOLO = ROOT.join('solo')
 
-    VAR = Pathname.new('/var/local/lib/idk')
+    VAR = Pathname.new('/var/local/idk')
 
     def self.user_var
       @user_var ||=
