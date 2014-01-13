@@ -26,6 +26,6 @@ gems = {
 
 build do
   gems.each do |gem_name, gem_version|
-    gem "install #{gem_name} --no-rdoc --no-ri -v #{gem_version}"
+    gem "install #{gem_name} --no-rdoc --no-ri -v #{gem_version} --minimal-deps"
   end
 end
