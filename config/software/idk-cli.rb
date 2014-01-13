@@ -11,6 +11,7 @@ wrapped = [
   'foodcritic',
   'kitchen',
   'knife',
+  'cap',
   'mina',
   'shef',
   'strainer',

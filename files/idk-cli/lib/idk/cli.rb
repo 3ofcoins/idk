@@ -23,6 +23,11 @@ module IDK
       method_option :root, :type => :boolean,
                     :desc => 'Execute the command as root, using `sudo` if necessary'
       def exec(*command)
+        gemfile_path = "/opt/idk/etc/bundle/#{File.basename(command.first)}/Gemfile"
+        if File.exist? gemfile_path
+          ENV['BUNDLE_GEMFILE'] = gemfile_path
+          command.unshift('bundle', 'exec')
+        end
         exec! *command, :as_root => options[:root]
       end
 

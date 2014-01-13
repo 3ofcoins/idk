@@ -10,8 +10,7 @@ build_iteration 1
 
 dependency "preparation"
 
-dependency "chef-gem"
-dependency "berkshelf"
+dependency "idk-gems"
 dependency "idk-bundle"
 dependency "idk-cli"
 dependency "idk-solo"
