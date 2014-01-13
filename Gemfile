@@ -1,12 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'omnibus', '~> 1.2.0',
-    git: 'https://github.com/3ofcoins/opscode-omnibus-ruby/',
-    branch: 'master'
-
-gem 'omnibus-software',
-    git: 'https://github.com/3ofcoins/opscode-omnibus-software.git',
-    branch: 'for/idk'
+gem 'omnibus', github: '3ofcoins/opscode-omnibus-ruby'
+gem 'omnibus-software', github: '3ofcoins/opscode-omnibus-software', branch: 'for/idk'
 
 group :development do
   gem 'filesize'
