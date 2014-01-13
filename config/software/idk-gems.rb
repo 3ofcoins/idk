@@ -1,4 +1,4 @@
-name "idk-bundle"
+name "idk-gems"
 
 dependency "ruby"
 dependency "rubygems"
