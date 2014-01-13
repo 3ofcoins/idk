@@ -13,7 +13,6 @@ gems = {
   'kitchen-vagrant' => '0.14.0',
   'strainer' => '3.3.0',
 
-  'rake' => '10.1.1',
   'omnibus' => '1.3.0',
   'vendorificator' => '0.5.git.v0.4.0.63.g8e9d54d', # FIXME:release
   'mina' => '0.3.0',
