@@ -24,9 +24,9 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'thor', '~> 0.18.1'
   spec.add_dependency 'minigit', '~> 0.0.4'
 
-  spec.add_development_dependency "bundler", "~> 1.3"
+  spec.add_development_dependency "bundler"
   spec.add_development_dependency "minitest"
   spec.add_development_dependency "mocha"
   spec.add_development_dependency 'simplecov'
-  spec.add_development_dependency "wrong", ">= 0.7.0"
+  spec.add_development_dependency "wrong", ">= 0.7.1"
 end
