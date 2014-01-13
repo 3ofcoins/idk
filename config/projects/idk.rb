@@ -10,8 +10,8 @@ build_iteration 1
 
 dependency "preparation"
 
-dependency "idk-gems"
 dependency "idk-bundle"
+dependency "idk-gems"
 dependency "idk-cli"
 dependency "idk-solo"
 
