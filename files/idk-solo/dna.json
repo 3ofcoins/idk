@@ -2,16 +2,6 @@
   "run_list": [
     "recipe[git]",
     "recipe[git-annex]",
-    "recipe[virtualbox]",
-    "recipe[idk::vagrant]",
     "recipe[idk]"
-  ],
-  "vagrant": {
-    "plugins": [
-      "vagrant-berkshelf",
-      "vagrant-exec",
-      "vagrant-omnibus",
-      "vagrant-plugin-bundler"
-    ]
-  }
+  ]
 }
