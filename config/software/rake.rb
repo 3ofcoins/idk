@@ -7,7 +7,7 @@ dependency 'rubygems'
 build do
   block do
     rake_bin = "#{install_dir}/embedded/bin/rake"
-    FileUtils.rm rake_bin if File.exist? rake_bin
+    FileUtils.rm_f rake_bin if File.exist? rake_bin
   end
   gem "install #{name} --no-rdoc --no-ri -v #{version}"
 end
