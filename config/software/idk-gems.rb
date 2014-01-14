@@ -3,10 +3,11 @@ name "idk-gems"
 dependency "ruby"
 dependency "rubygems"
 
+dependency 'rake'
 dependency 'berkshelf'
+dependency 'chef-gem'
 
 gems = {
-  'rake' => '10.1.1',           # needs to be in front
   'chefspec' => '3.1.4',
   'foodcritic' => '3.0.3',
   'test-kitchen' => '1.1.1',
@@ -26,6 +27,6 @@ gems = {
 
 build do
   gems.each do |gem_name, gem_version|
-    gem "install #{gem_name} --no-rdoc --no-ri -v #{gem_version} --minimal-deps"
+    gem "install #{gem_name} --no-rdoc --no-ri -v #{gem_version}"
   end
 end
