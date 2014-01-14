@@ -4,7 +4,6 @@ dependency "ruby"
 dependency "rubygems"
 
 dependency 'berkshelf'
-dependency 'chef-gem'
 
 gems = {
   'chefspec' => '3.1.4',
