@@ -11,9 +11,9 @@ build_iteration 1
 dependency "preparation"
 
 dependency "idk-bundle"
-dependency "idk-gems"
-dependency "idk-cli"
-dependency "idk-solo"
+#dependency "idk-gems"
+#dependency "idk-cli"
+#dependency "idk-solo"
 
 dependency "version-manifest"
 
