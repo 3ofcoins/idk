@@ -11,3 +11,7 @@ gem 'knife-dns-update'
 gem 'knife-dwim'
 gem 'knife-ec2'
 gem 'knife-essentials'
+
+# needed by foundation, need to extract idk-config from there.
+gem 'minigit'
+gem 'tinyconfig'

@@ -99,6 +99,7 @@ GEM
     method_source (0.8.2)
     mime-types (1.25.1)
     mini_portile (0.5.2)
+    minigit (0.0.4)
     mixlib-authentication (1.3.0)
       mixlib-log
     mixlib-cli (1.4.0)
@@ -147,6 +148,7 @@ GEM
       wasabi (~> 1.0)
     slop (3.4.7)
     systemu (2.5.2)
+    tinyconfig (0.0.1)
     uuidtools (2.1.4)
     wasabi (1.0.0)
       nokogiri (>= 1.4.0)
@@ -175,3 +177,5 @@ DEPENDENCIES
   knife-dwim
   knife-ec2
   knife-essentials
+  minigit
+  tinyconfig
