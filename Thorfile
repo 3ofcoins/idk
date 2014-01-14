@@ -104,7 +104,8 @@ class Omnibus < Thor
     if softwares.empty?
       if options[:purge]
         remove_file '/opt/idk'
-        run 'omnibus clean --purge idk'
+        empty_directory 'tmp'
+        run 'omnibus clean --purge idk > tmp/clean.log'
       end
       run 'omnibus build project idk'
     else
