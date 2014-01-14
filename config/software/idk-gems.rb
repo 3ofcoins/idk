@@ -6,6 +6,7 @@ dependency "rubygems"
 dependency 'berkshelf'
 
 gems = {
+  'rake' => '10.1.1',           # needs to be in front
   'chefspec' => '3.1.4',
   'foodcritic' => '3.0.3',
   'test-kitchen' => '1.1.1',
