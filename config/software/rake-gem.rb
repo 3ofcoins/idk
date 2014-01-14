@@ -9,5 +9,5 @@ build do
     rake_bin = "#{install_dir}/embedded/bin/rake"
     FileUtils.rm_f rake_bin if File.exist? rake_bin
   end
-  gem "install #{name} --no-rdoc --no-ri -v #{version}"
+  gem "install rake --no-rdoc --no-ri -v #{version}"
 end
