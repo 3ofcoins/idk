@@ -3,7 +3,7 @@ name "idk-gems"
 dependency "ruby"
 dependency "rubygems"
 
-dependency 'rake'
+dependency 'rake-gem'
 dependency 'berkshelf'
 dependency 'chef-gem'
 

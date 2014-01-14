@@ -1,4 +1,4 @@
-name 'rake'
+name 'rake-gem'
 version '10.1.1'
 
 dependency 'ruby'
