@@ -15,11 +15,11 @@ gems = {
   'strainer' => '3.3.0',
 
   'omnibus' => '1.3.0',
-  'vendorificator' => '0.5.git.v0.4.0.63.g8e9d54d', # FIXME:release
+  'vendorificator' => '0.5.0',
   'mina' => '0.3.0',
   'capistrano' => '3.0.1',
 
-  # development / inspection
+  # development / inspection / optimizations
   'awesome_print' => '1.2.0',
   'pry' => '0.9.12.4',
   'oj' => '2.5.3'
