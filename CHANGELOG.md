@@ -1,6 +1,13 @@
 Changes
 =======
 
+0.1.0
+-----
+ - Stopped trying to install Virtualbox & Vagrant, it proved
+   problematic and didn't bring much value
+ - Upgraded included gems and other software
+ - Run knife with bundler for faster startup
+
 0.0.6
 -----
  - Include knife-annex
