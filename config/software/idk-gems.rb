@@ -15,7 +15,7 @@ gems = {
   'strainer' => '3.3.0',
 
   'omnibus' => '1.3.0',
-  'vendorificator' => '0.5.0',
+  'vendorificator' => '0.5.1',
   'mina' => '0.3.0',
   'capistrano' => '3.0.1',
 

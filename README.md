@@ -34,6 +34,7 @@ Included software
  - Thor 0.18.1
  - Mina 0.3.0
  - Capistrano 3.0.1
+ - Vendorificator 0.5.1
 
 IDK includes also chef-solo recipes that make sure that following
 software is installed on your workstation:
