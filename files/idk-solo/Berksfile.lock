@@ -1,7 +1,7 @@
 {
   "sources": {
     "git": {
-      "locked_version": "2.6.0"
+      "locked_version": "2.9.0"
     },
     "git-annex": {
       "locked_version": "0.1.5"
@@ -12,9 +12,6 @@
     "build-essential": {
       "locked_version": "1.4.2"
     },
-    "yum": {
-      "locked_version": "3.0.4"
-    },
     "windows": {
       "locked_version": "1.11.0"
     },
@@ -23,6 +20,12 @@
     },
     "runit": {
       "locked_version": "1.4.0"
+    },
+    "yum": {
+      "locked_version": "3.0.4"
+    },
+    "yum-epel": {
+      "locked_version": "0.2.0"
     },
     "apt": {
       "locked_version": "2.3.0"

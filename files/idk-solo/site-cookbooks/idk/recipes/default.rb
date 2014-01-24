@@ -24,6 +24,24 @@
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
+# Add Git, but only if user doesn't have it installed
+require 'chef/mixin/shell_out'
+class << self
+  include Chef::Mixin::ShellOut
+end
+
+begin
+  shell_out! 'git --version'
+rescue
+  include_recipe 'git'
+end
+
+begin
+  shell_out! 'git annex version'
+rescue
+  include_recipe 'git-annex'
+end
+
 #
 # These should have been done by postinst, but it won't hurt to
 # double-check in case the directory has been removed for some reason.
