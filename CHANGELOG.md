@@ -1,6 +1,10 @@
 Changes
 =======
 
+0.1.1
+-----
+ - Updated Vendorificator to include a bugfix
+
 0.1.0
 -----
  - Stopped trying to install Virtualbox & Vagrant, it proved
