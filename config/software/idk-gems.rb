@@ -17,12 +17,12 @@ gems = {
   'omnibus' => '1.3.0',
   'vendorificator' => '0.5.1',
   'mina' => '0.3.0',
-  'capistrano' => '3.0.1',
+  'capistrano' => '3.1.0',
 
   # development / inspection / optimizations
   'awesome_print' => '1.2.0',
   'pry' => '0.9.12.4',
-  'oj' => '2.5.3'
+  'oj' => '2.5.4'
 }
 
 build do
