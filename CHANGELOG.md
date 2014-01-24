@@ -1,6 +1,12 @@
 Changes
 =======
 
+0.1.2
+-----
+ - Bumped some gems
+ - Chef-solo setup doesn't try to install git or git-annex when
+   they're already installed
+
 0.1.1
 -----
  - Updated Vendorificator to include a bugfix
