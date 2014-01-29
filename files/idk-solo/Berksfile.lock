@@ -1,13 +1,13 @@
 {
   "sources": {
+    "dmg": {
+      "locked_version": "2.1.4"
+    },
     "git": {
       "locked_version": "2.9.0"
     },
     "git-annex": {
       "locked_version": "0.1.5"
-    },
-    "dmg": {
-      "locked_version": "2.0.8"
     },
     "build-essential": {
       "locked_version": "1.4.2"
