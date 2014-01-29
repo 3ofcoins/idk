@@ -1,6 +1,10 @@
 Changes
 =======
 
+0.1.3
+-----
+ - Bumped dmg cookbook & Vendorificator to fix ugly bugs.
+
 0.1.2
 -----
  - Bumped some gems
