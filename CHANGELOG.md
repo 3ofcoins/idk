@@ -1,6 +1,11 @@
 Changes
 =======
 
+0.1.4
+-----
+ - Bumped Vendorificator to include bugfixes
+ - Bumped Chefspec
+
 0.1.3
 -----
  - Bumped dmg cookbook & Vendorificator to fix ugly bugs.

@@ -24,7 +24,7 @@ Included software
    - knife-essentials
  - Testing tools:
    - Test Kitchen 1.1.1 with kitchen-vagrant
-   - Chefspec 3.1.4
+   - Chefspec 3.2.0
    - Strainer 3.3.0
    - Foodcritic 3.0.3
  - Berkshelf 2.0.12
@@ -34,7 +34,7 @@ Included software
  - Thor 0.18.1
  - Mina 0.3.0
  - Capistrano 3.0.1
- - Vendorificator 0.5.1
+ - Vendorificator 0.5.3
 
 IDK includes also chef-solo recipes that make sure that following
 software is installed on your workstation:
