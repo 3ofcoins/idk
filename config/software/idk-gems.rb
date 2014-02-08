@@ -8,14 +8,14 @@ dependency 'berkshelf'
 dependency 'chef-gem'
 
 gems = {
-  'chefspec' => '3.1.4',
+  'chefspec' => '3.2.0',
   'foodcritic' => '3.0.3',
   'test-kitchen' => '1.1.1',
   'kitchen-vagrant' => '0.14.0',
   'strainer' => '3.3.0',
 
   'omnibus' => '1.3.0',
-  'vendorificator' => '0.5.2',
+  'vendorificator' => '0.5.3',
   'mina' => '0.3.0',
   'capistrano' => '3.1.0',
 
