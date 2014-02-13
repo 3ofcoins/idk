@@ -3,7 +3,7 @@ driver:
   name: vagrant
   require_chef_omnibus: false
   sudo: false
-  pre_create_command: curl -z pkg/idk-installer.sh -o pkg/idk-installer.sh https://s3.amazonaws.com/downloads.3ofcoins.net/idk-installer.sh
+  pre_create_command: curl -z pkg/idk-installer.sh -o pkg/idk-installer.sh https://s3.amazonaws.com/downloads.3ofcoins.net/idk-installer.sh ; chmod 755 pkg/idk-installer.sh
 
 provisioner:
   name: shell
@@ -42,5 +42,3 @@ platforms:
 
 suites:
   - name: default
-    run_list:
-    attributes:
