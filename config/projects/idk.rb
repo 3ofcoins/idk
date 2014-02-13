@@ -19,3 +19,11 @@ dependency "version-manifest"
 
 exclude "\.git*"
 exclude "bundler\/git"
+
+def platform_version
+  if platform == 'arch'
+    machine
+  else
+    super
+  end
+end

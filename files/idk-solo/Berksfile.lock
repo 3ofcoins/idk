@@ -7,7 +7,7 @@
       "locked_version": "2.9.0"
     },
     "git-annex": {
-      "locked_version": "0.1.5"
+      "locked_version": "0.1.6"
     },
     "build-essential": {
       "locked_version": "1.4.2"
@@ -19,7 +19,7 @@
       "locked_version": "1.1.4"
     },
     "runit": {
-      "locked_version": "1.4.0"
+      "locked_version": "1.5.8"
     },
     "yum": {
       "locked_version": "3.0.4"

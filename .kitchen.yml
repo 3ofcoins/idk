@@ -1,0 +1,44 @@
+---
+driver:
+  name: vagrant
+  require_chef_omnibus: false
+  sudo: false
+  pre_create_command: curl -z pkg/idk-installer.sh -o pkg/idk-installer.sh https://s3.amazonaws.com/downloads.3ofcoins.net/idk-installer.sh ; chmod 755 pkg/idk-installer.sh
+
+provisioner:
+  name: shell
+  data_path: pkg
+  script: test/bootstrap.sh
+  sudo: false
+
+busser:
+  ruby_bindir: /opt/idk/embedded/bin
+  sudo: false
+
+platforms:
+<% if ENV['IDK_TEST_OSX'] %>
+  - name: osx-lion
+    driver:
+      box: osx-lion-minimal
+      box_url: null
+      provider: vmware_fusion
+#  - name: osx-mavericks
+#    driver:
+#      box: osx-mavericks-minimal
+#      box_url: null
+#      provider: vmware_fusion
+<% end %>
+  - name: linux-ubuntu-12.04
+    driver:
+      box: opscode_ubuntu-12.04_provisionerless
+      box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-12.04_chef-provisionerless.box
+  - name: linux-arch
+    driver:
+      box: arch
+    provisioner:
+      root_path: /var/tmp/kitchen
+    busser:
+      root_path: /var/tmp/busser
+
+suites:
+  - name: default
