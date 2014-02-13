@@ -18,6 +18,17 @@ GIT
   specs:
     omnibus-software (0.0.1)
 
+GIT
+  remote: git://github.com/test-kitchen/test-kitchen.git
+  revision: cd46e63cc3799422cd5c10fce77b6146040a0d7f
+  specs:
+    test-kitchen (1.1.2.dev)
+      mixlib-shellout (~> 1.2)
+      net-scp (~> 1.1)
+      net-ssh (~> 2.7)
+      safe_yaml (~> 1.0)
+      thor (~> 0.18)
+
 PATH
   remote: files/idk-cli/
   specs:
@@ -71,6 +82,8 @@ GEM
     http_parser.rb (0.5.3)
     ipaddress (0.8.0)
     json (1.8.1)
+    kitchen-vagrant (0.14.0)
+      test-kitchen (~> 1.0)
     metaclass (0.0.2)
     method_source (0.8.2)
     mime-types (1.25.1)
@@ -109,6 +122,7 @@ GEM
       sexp_processor (~> 4.0)
     ruby_parser (3.2.2)
       sexp_processor (~> 4.1)
+    safe_yaml (1.0.1)
     sexp_processor (4.4.1)
     simplecov (0.8.2)
       docile (~> 1.1.0)
@@ -136,6 +150,7 @@ DEPENDENCIES
   filesize
   fog
   idk-cli!
+  kitchen-vagrant
   minigit
   minitest
   mocha
@@ -143,4 +158,5 @@ DEPENDENCIES
   omnibus-software!
   pry
   simplecov
+  test-kitchen!
   wrong (>= 0.7.1)

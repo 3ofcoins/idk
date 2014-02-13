@@ -8,6 +8,8 @@ group :development do
   gem 'fog'
   gem 'minigit'
   gem 'pry'
+  gem 'test-kitchen', github: 'test-kitchen/test-kitchen'
+  gem 'kitchen-vagrant'
 end
 
 gemspec path: 'files/idk-cli/'
