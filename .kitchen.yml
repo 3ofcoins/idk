@@ -22,11 +22,11 @@ platforms:
       box: osx-lion-minimal
       box_url: null
       provider: vmware_fusion
-  - name: osx-mavericks
-    driver:
-      box: osx-mavericks-minimal
-      box_url: null
-      provider: vmware_fusion
+#  - name: osx-mavericks
+#    driver:
+#      box: osx-mavericks-minimal
+#      box_url: null
+#      provider: vmware_fusion
 <% end %>
   - name: linux-ubuntu-12.04
     driver:
