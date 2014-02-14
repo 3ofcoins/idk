@@ -17,16 +17,16 @@ busser:
 
 platforms:
 <% if ENV['IDK_TEST_OSX'] %>
-  - name: osx-lion
-    driver:
-      box: osx-lion-minimal
-      box_url: null
-      provider: vmware_fusion
-#  - name: osx-mavericks
+#  - name: osx-lion
 #    driver:
-#      box: osx-mavericks-minimal
+#      box: osx-lion-minimal
 #      box_url: null
 #      provider: vmware_fusion
+  - name: osx-mavericks
+    driver:
+      box: osx-mavericks-minimal
+      box_url: null
+      provider: vmware_fusion
 <% end %>
   - name: linux-ubuntu-12.04
     driver:
