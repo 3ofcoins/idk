@@ -14,6 +14,7 @@ env = {
 }
 
 build do
+  patch :source => 'getline.patch' # http://bugs.gw.com/view.php?id=230
   command "./configure --prefix=#{install_dir}/embedded", :env => env
   command "make -j #{max_build_jobs}", :env => env
   command "make install"
