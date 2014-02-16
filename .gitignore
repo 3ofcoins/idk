@@ -13,3 +13,4 @@
 .DS_Store
 .kitchen/
 .kitchen.local.yml
+.kitchen.osx
