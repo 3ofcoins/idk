@@ -1,10 +1,10 @@
 name "file"
-version '5.14'
+version '5.17'
 
 dependency "zlib"
 
 source url: "ftp://ftp.astron.com/pub/#{name}/#{name}-#{version}.tar.gz",
-       md5: 'c26625f1d6773ad4bc5a87c0e315632c'
+       md5: 'e19c47e069ced7b01ccb4db402cc01d3'
 relative_path "#{name}-#{version}"
 
 env = {
