@@ -6,6 +6,7 @@ gem 'omnibus-software', github: '3ofcoins/opscode-omnibus-software', branch: 'fo
 group :development do
   gem 'filesize'
   gem 'fog'
+  gem 'unf'                     # needed by fog
   gem 'minigit'
   gem 'pry'
   gem 'test-kitchen', github: 'test-kitchen/test-kitchen'
