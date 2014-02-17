@@ -71,6 +71,7 @@ namespace :idk do
     pkgs = {}
     meta = []
     bucket.files.all(prefix: "idk/").each do |file|
+      next if file.key == 'idk/manifest.json'
       if file.key =~ /\.json$/
         metum = JSON[file.body]
         metum['key'] = "#{file.key.sub(/\/[^\/]*$/,'')}/#{metum['basename']}"
