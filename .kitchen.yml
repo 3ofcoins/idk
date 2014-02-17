@@ -16,11 +16,11 @@ busser:
 
 platforms:
 <% if ENV['KITCHEN_OSX'] || File.exist?('.kitchen.osx') %>
-#  - name: osx-lion
-#    driver:
-#      box: osx-lion-minimal
-#      box_url: null
-#      provider: vmware_fusion
+  - name: osx-lion
+    driver:
+      box: osx-lion-minimal
+      box_url: null
+      provider: vmware_fusion
   - name: osx-mavericks
     driver:
       box: osx-mavericks-minimal
