@@ -7,6 +7,11 @@ install_path    "/opt/idk"
 
 build_version Omnibus::BuildVersion.new.semver
 build_iteration 1
+mac_pkg_identifier "net.3ofcoins.pkg.idk"
+
+override :'chef-gem', version: '11.12.2'
+override :ruby, version: '2.1.1'
+override :rubygems, version: '2.2.1'
 
 dependency "preparation"
 

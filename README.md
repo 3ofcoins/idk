@@ -10,7 +10,7 @@ infrastructure using Opscode Chef and related tools.
 Included software
 -----------------
 
- - Chef 11.8.2
+ - Chef 11.12.2
  - Knife plugins:
    - chef-vault
    - knife-annex
@@ -23,17 +23,17 @@ Included software
    - knife-ec2
    - knife-essentials
  - Testing tools:
-   - Test Kitchen 1.1.1 with kitchen-vagrant
-   - Chefspec 3.2.0
+   - Test Kitchen 1.2.1 with kitchen-vagrant
+   - Chefspec 3.4.0
    - Strainer 3.3.0
    - Foodcritic 3.0.3
- - Berkshelf 2.0.12
- - Omnibus 1.3.0
- - Pry 0.9.12.4
- - Rake 10.1.1
+ - Berkshelf 3 (from git)
+ - Omnibus 3.0.0
+ - Pry 0.9.12.6
+ - Rake 10
  - Thor 0.18.1
  - Mina 0.3.0
- - Capistrano 3.0.1
+ - Capistrano 3.1.0
  - Vendorificator 0.5.3
 
 IDK includes also chef-solo recipes that make sure that following

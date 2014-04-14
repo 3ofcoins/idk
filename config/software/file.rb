@@ -1,5 +1,5 @@
 name "file"
-version '5.17'
+default_version '5.17'
 
 dependency "zlib"
 

@@ -8,21 +8,21 @@ dependency 'berkshelf'
 dependency 'chef-gem'
 
 gems = {
-  'chefspec' => '3.2.0',
+  'chefspec' => '3.4.0',
   'foodcritic' => '3.0.3',
-  'test-kitchen' => '1.1.1',
+  'test-kitchen' => '1.2.1',
   'kitchen-vagrant' => '0.14.0',
   'strainer' => '3.3.0',
 
-  'omnibus' => '1.3.0',
+  'omnibus' => '3.0.0',
   'vendorificator' => '0.5.3',
   'mina' => '0.3.0',
   'capistrano' => '3.1.0',
 
   # development / inspection / optimizations
   'awesome_print' => '1.2.0',
-  'pry' => '0.9.12.4',
-  'oj' => '2.5.4'
+  'pry' => '0.9.12.6',
+  'oj' => '2.7.3'
 }
 
 build do

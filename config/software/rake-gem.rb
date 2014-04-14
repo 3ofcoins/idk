@@ -1,5 +1,5 @@
 name 'rake-gem'
-version '10.1.1'
+default_version '10.2.2'
 
 dependency 'ruby'
 dependency 'rubygems'
