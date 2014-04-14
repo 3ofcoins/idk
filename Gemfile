@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'omnibus', github: '3ofcoins/opscode-omnibus-ruby'
+gem 'omnibus', '~> 3.0'
 gem 'omnibus-software', github: '3ofcoins/opscode-omnibus-software', branch: 'for/idk'
 
 group :development do
@@ -9,7 +9,7 @@ group :development do
   gem 'unf'                     # needed by fog
   gem 'minigit'
   gem 'pry'
-  gem 'test-kitchen', github: 'test-kitchen/test-kitchen'
+  gem 'test-kitchen', '~> 1.2'
   gem 'kitchen-vagrant'
 end
 
