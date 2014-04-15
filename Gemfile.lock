@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/3ofcoins/opscode-omnibus-software.git
-  revision: c14e342ee5087454f37935a1f823e810f7e764a4
+  revision: 08406fbc31a9999acc9b5d45f63e8506f24583e8
   branch: for/idk
   specs:
     omnibus-software (0.0.1)
