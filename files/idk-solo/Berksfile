@@ -1,5 +1,0 @@
-# -*- ruby -*-
-source 'https://api.berkshelf.com'
-cookbook 'dmg', '~> 2.1'
-cookbook 'git', '~> 2.9'
-cookbook 'git-annex', '~> 0.1.6'

@@ -1,5 +1,0 @@
-#!/bin/sh
-
-rm -f /usr/bin/idk
-
-exit 0
